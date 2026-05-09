@@ -1,158 +1,199 @@
 // components/FeaturedProjects.tsx
+
 "use client";
-import { motion } from "framer-motion";
-import SectionLabel from "./ui/SectionLabel";
+
 import Reveal from "./ui/Reveal";
 
 const projects = [
   {
-    n: "01",
-    client: "Northwind Capital",
-    title: "Reimagining underwriting for SMB lending",
-    role: "Lead PM",
-    year: "2024",
-    summary:
-      "Took a manual, 6-day underwriting process and turned it into a tiered automated workflow. Cut decision time by 38% and reduced default risk by 12%.",
-    tags: ["0→1 product", "Fintech", "Workflow"],
-    metric: { k: "Underwriting time", v: "−38%" },
+    id: "01",
+    year: "2026",
+    company: "IIT Bombay",
+    title: "Campus EV Tracking System",
+
+    description:
+      "Exploring ways to improve the IIT Bombay e-buggy transportation experience by solving uncertainty around vehicle availability, routes & wait times.",
+
+    tags: ["Systems", "Operations", "User Research"],
+
+    link: "#",
+    linkText: "View project research",
   },
+
   {
-    n: "02",
-    client: "Lattice (internal)",
-    title: "A leaner artifact for company strategy",
-    role: "Product strategy",
-    year: "2024",
-    summary:
-      "Replaced a 40-page OKR document with a single 'strategy canvas' adopted by four product pods. Improved cross-team alignment scores by 22%.",
-    tags: ["Strategy", "Internal tooling", "Operations"],
-    metric: { k: "Alignment score", v: "+22%" },
+    id: "02",
+    year: "2025",
+    company: "HiLabs Case Study",
+    title: "Healthcare Provider Data Platform",
+
+    description:
+      "Designed HiSSOT, an AI-powered healthcare data platform focused on creating a reliable Single Source of Truth for provider information. Explored trust scoring, data reconciliation, operational workflows & scalable system design.",
+
+    tags: ["Healthcare", "Systems", "Product Strategy"],
+
+    link: "/HiLabs.pdf",
+    linkText: "Read case study",
   },
+
   {
-    n: "03",
-    client: "Polymath Health",
-    title: "Pricing & packaging for a clinical SaaS",
-    role: "Business analyst",
-    year: "2023",
-    summary:
-      "Led market research and pricing modeling for a relaunch. Designed a three-tier structure that lifted ARPA by 1.6× over two quarters.",
-    tags: ["Pricing", "Healthcare", "Research"],
-    metric: { k: "ARPA", v: "1.6×" },
+  id: "03",
+  year: "2025",
+  company: "Flipkart Case Study",
+  title: "Consumer Behavior & Attention Economy Analysis",
+
+  description:
+    "Explored how digital overstimulation impacts creativity, focus & reflective thinking among Gen Z users. Designed Serenova, a neuroscience-driven product concept using AI guidance & behavioral systems to encourage cognitive recovery & deeper thinking.",
+
+  tags: ["Consumer Psychology", "Product Thinking", "Research"],
+
+  link: "/Flipkart.pdf",
+  linkText: "Read case study",
   },
+
   {
-    n: "04",
-    client: "Banco Sur",
-    title: "Regulatory transformation roadmap",
-    role: "Consulting analyst",
-    year: "2022",
-    summary:
-      "Co-authored a 3-year compliance roadmap for a Latin American bank. Synthesized 14 regulatory frameworks into a single execution plan.",
-    tags: ["Consulting", "Banking", "Roadmap"],
-    metric: { k: "Frameworks unified", v: "14" },
+    id: "04",
+    year: "2025",
+    company: "RISA Labs",
+    title: "AI Browser & Research Workflow Systems",
+
+    description:
+      "Conceptualized Velocity, an AI-native research browser designed to reduce context switching & support deeper work for researchers & product teams. Explored AI-assisted workflows, productivity systems & scalable product strategy.",
+
+    tags: ["AI Products", "Systems", "Research"],
+
+    link: "/RISA_Labs.pdf",
+    linkText: "View project",
   },
 ];
 
 export default function FeaturedProjects() {
   return (
-    <section id="work" className="border-t hairline py-28 md:py-40">
+    <section
+      id="work"
+      className="border-t hairline py-28 md:py-40"
+    >
       <div className="max-w-page mx-auto px-6 md:px-10">
-        <div className="flex items-end justify-between gap-6 flex-wrap">
-          <Reveal>
-            <SectionLabel index="04" label="Selected work" />
-            <h2 className="serif text-5xl md:text-7xl tracking-tight mt-6 max-w-3xl leading-[1.05]">
-              Four projects that taught me something I still use.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <a
-              href="#contact"
-              className="text-[14px] text-muted hover:text-ink transition"
-            >
-              Full case studies on request →
-            </a>
-          </Reveal>
+
+        {/* Heading */}
+        <Reveal>
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+
+            <div>
+              <h2 className="serif text-[42px] md:text-[64px] leading-none tracking-tight">
+                Selected Work
+              </h2>
+
+              {/* <p className="mt-4 text-[15px] md:text-[16px] text-muted max-w-xl leading-relaxed">
+                A collection of projects, case studies, and systems-focused
+                explorations across product thinking, operations, strategy,
+                and user experience.
+              </p> */}
+            </div>
+
+            <div className="hidden md:flex items-center gap-3">
+              <div className="h-3 w-3 rounded-full bg-ink/20" />
+              <div className="h-3 w-3 rounded-full bg-ink/40" />
+              <div className="h-3 w-3 rounded-full bg-ink/70" />
+            </div>
+
+          </div>
+        </Reveal>
+
+        {/* Projects */}
+        <div className="mt-20 space-y-24">
+
+          {projects.map((project, i) => (
+            <Reveal key={project.id} delay={i * 0.05}>
+
+              <div className="grid md:grid-cols-12 gap-10 border-t border-line pt-12">
+
+                {/* LEFT */}
+                <div className="md:col-span-5">
+
+                  <div className="flex items-center gap-4 mb-6">
+
+                    <span className="text-[12px] uppercase tracking-[0.18em] text-muted">
+                      {project.company} · {project.year}
+                    </span>
+
+                    <span className="h-px flex-1 bg-line" />
+
+                  </div>
+
+                  <h3 className="serif text-[36px] md:text-[54px] leading-[0.96] tracking-tight max-w-[11ch]">
+                    {project.title}
+                  </h3>
+
+                </div>
+
+                {/* RIGHT */}
+                <div className="md:col-span-6 md:col-start-7 flex flex-col justify-between">
+
+                  <div>
+
+                    <p className="text-[17px] md:text-[18px] leading-[1.9] text-ink/80 max-w-xl">
+                      {project.description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="mt-8 flex flex-wrap gap-3">
+
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-line px-4 py-2 text-[11px] uppercase tracking-[0.14em] text-muted hover:border-ink/30 transition"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+
+                    </div>
+
+                  </div>
+
+                  {/* Link */}
+                  <div className="mt-10">
+
+                    <a
+                      href={project.link}
+                      className="group inline-flex items-center gap-2 text-[15px] text-ink hover:text-muted transition"
+                    >
+                      {project.linkText}
+
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </Reveal>
+          ))}
+
         </div>
 
-        <div className="mt-16 md:mt-24 border-t hairline">
-          {projects.map((p, i) => (
-            <ProjectRow key={p.n} project={p} i={i} />
-          ))}
-        </div>
+        {/* Bottom subtle element */}
+        <Reveal delay={0.2}>
+          <div className="mt-28 flex items-center justify-center">
+
+            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-muted">
+
+              <span className="h-px w-10 bg-line" />
+
+              Product Thinking · Systems · Strategy
+
+              <span className="h-px w-10 bg-line" />
+
+            </div>
+
+          </div>
+        </Reveal>
+
       </div>
     </section>
-  );
-}
-
-function ProjectRow({
-  project,
-  i,
-}: {
-  project: (typeof projects)[number];
-  i: number;
-}) {
-  return (
-    <motion.a
-      href="#"
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.7, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-      className="group block border-b hairline py-10 md:py-14"
-    >
-      <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
-        <div className="md:col-span-1 text-[12px] font-mono text-muted pt-1">
-          {project.n}
-        </div>
-
-        <div className="md:col-span-6">
-          <div className="text-[12px] uppercase tracking-[0.18em] text-muted">
-            {project.client} · {project.year}
-          </div>
-          <h3 className="serif mt-3 text-3xl md:text-[44px] leading-[1.05] tracking-tight max-w-[18ch] group-hover:text-accent transition-colors duration-500">
-            {project.title}
-          </h3>
-        </div>
-
-        <div className="md:col-span-4 text-[15px] text-ink/75 leading-relaxed">
-          <p>{project.summary}</p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {project.tags.map((t) => (
-              <span
-                key={t}
-                className="text-[11px] uppercase tracking-[0.14em] text-muted border hairline rounded-full px-2.5 py-1"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="md:col-span-1 text-right">
-          <div className="serif text-3xl tracking-tight">
-            {project.metric.v}
-          </div>
-          <div className="text-[10px] uppercase tracking-[0.16em] text-muted mt-1">
-            {project.metric.k}
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-6 flex items-center gap-2 text-[13px] text-muted group-hover:text-ink transition">
-        Read case study
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 14 14"
-          fill="none"
-          className="transition-transform duration-500 group-hover:translate-x-1"
-        >
-          <path
-            d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
-    </motion.a>
   );
 }

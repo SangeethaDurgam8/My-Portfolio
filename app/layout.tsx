@@ -17,7 +17,7 @@ const serif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Aanya Mehta — Product & Strategy",
+  title: "Sangeetha's Portfolio",
   description:
     "Product manager and business analyst building thoughtful tools at the intersection of strategy, operations and design.",
 };
