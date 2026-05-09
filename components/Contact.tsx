@@ -61,7 +61,7 @@ export default function Contact() {
                 {
                   k: "Calendar",
                   v: "Schedule a conversation",
-                  href: "mailto:durgamsangeetha24@gmail.com",
+                  href: "https://calendar.app.google/wCBCQnxZtpHDftPX7",
                 },
 
               ].map((row) => (
