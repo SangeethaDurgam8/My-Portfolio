@@ -16,7 +16,7 @@ const projects = [
 
     tags: ["Systems", "Operations", "User Research"],
 
-    link: "#",
+    link: "https://www.notion.so/CampusFlow-36285eb0e1dd8069ab57f7ae167bfcf0?source=copy_link",
     linkText: "View project research",
   },
 
