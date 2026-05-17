@@ -23,7 +23,7 @@ const projects = [
   {
     id: "02",
     year: "2026",
-    company: "Self Project",
+    company: "Independent Project",
     title: "KYC Risk Analytics Dashboard",
 
     description:
@@ -32,7 +32,7 @@ const projects = [
     tags: ["SQL", "Python", "Power BI"],
 
     link: "",
-    linkText: "View dashboard",
+    linkText: "View Project Info",
   },
 
   {
