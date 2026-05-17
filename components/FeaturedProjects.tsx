@@ -7,7 +7,7 @@ import Reveal from "./ui/Reveal";
 const projects = [
   {
     id: "01",
-    year: "2026",
+    year: "2024",
     company: "IIT Bombay",
     title: "Campus EV Tracking System",
 
@@ -22,6 +22,21 @@ const projects = [
 
   {
     id: "02",
+    year: "2026",
+    company: "Self Project",
+    title: "KYC Risk Analytics Dashboard",
+
+    description:
+      "Built an end-to-end KYC and AML risk analytics system using SQL, Python & Power BI to identify high-risk customer profiles and suspicious transaction patterns.",
+
+    tags: ["SQL", "Python", "Power BI"],
+
+    link: "",
+    linkText: "View dashboard",
+  },
+
+  {
+    id: "03",
     year: "2025",
     company: "HiLabs Case Study",
     title: "Healthcare Provider Data Platform",
@@ -36,22 +51,37 @@ const projects = [
   },
 
   {
-  id: "03",
-  year: "2025",
-  company: "Flipkart Case Study",
-  title: "Consumer Behavior & Attention Economy Analysis",
+    id: "04",
+    year: "2024",
+    company: "IIT Bombay",
+    title: "Campus EV Tracking System",
 
-  description:
-    "Explored how digital overstimulation impacts creativity, focus & reflective thinking among Gen Z users. Designed Serenova, a neuroscience-driven product concept using AI guidance & behavioral systems to encourage cognitive recovery & deeper thinking.",
+    description:
+      "Exploring ways to improve the IIT Bombay e-buggy transportation experience by solving uncertainty around vehicle availability, routes & wait times.",
 
-  tags: ["Consumer Psychology", "Product Thinking", "Research"],
+    tags: ["Systems", "Operations", "User Research"],
 
-  link: "/Flipkart.pdf",
-  linkText: "Read case study",
+    link: "https://www.notion.so/CampusFlow-36285eb0e1dd8069ab57f7ae167bfcf0?source=copy_link",
+    linkText: "View project research",
   },
 
   {
-    id: "04",
+    id: "05",
+    year: "2025",
+    company: "Flipkart Case Study",
+    title: "Consumer Behavior & Attention Economy Analysis",
+
+    description:
+      "Explored how digital overstimulation impacts creativity, focus & reflective thinking among Gen Z users. Designed Serenova, a neuroscience-driven product concept using AI guidance & behavioral systems to encourage cognitive recovery & deeper thinking.",
+
+    tags: ["Consumer Psychology", "Product Thinking", "Research"],
+
+    link: "/Flipkart.pdf",
+    linkText: "Read case study",
+  },
+
+  {
+    id: "06",
     year: "2025",
     company: "RISA Labs",
     title: "AI Browser & Research Workflow Systems",
