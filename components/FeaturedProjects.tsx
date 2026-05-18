@@ -7,7 +7,7 @@ import Reveal from "./ui/Reveal";
 const projects = [
   {
     id: "01",
-    year: "2024",
+    year: "2026",
     company: "IIT Bombay",
     title: "Campus EV Tracking System",
 
