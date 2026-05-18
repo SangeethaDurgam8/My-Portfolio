@@ -31,7 +31,7 @@ const projects = [
 
     tags: ["SQL", "Python", "Power BI"],
 
-    link: "",
+    link: "https://drive.google.com/drive/folders/1wMOMT0sq2z4SRmFVa0W6RqkUlBSfVels?usp=sharing",
     linkText: "View Project Info",
   },
 
@@ -54,14 +54,14 @@ const projects = [
     id: "04",
     year: "2024",
     company: "IIT Bombay",
-    title: "Campus EV Tracking System",
+    title: "Startup Project Proposal",
 
     description:
-      "Exploring ways to improve the IIT Bombay e-buggy transportation experience by solving uncertainty around vehicle availability, routes & wait times.",
+     "Conducted end-to-end market, stakeholder, financial & operational analysis for a women’s safety platform focused on real-time alerts, GPS tracking & scalable community-driven safety systems.",
 
-    tags: ["Systems", "Operations", "User Research"],
+    tags: ["Project Management", "Strategy", "Systems Design"],
 
-    link: "https://www.notion.so/CampusFlow-36285eb0e1dd8069ab57f7ae167bfcf0?source=copy_link",
+    link: "TD608-project-3.pdf",
     linkText: "View project research",
   },
 
