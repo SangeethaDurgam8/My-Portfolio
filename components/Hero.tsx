@@ -87,9 +87,10 @@ export default function Hero() {
             {/* RIGHT — portrait + handwritten traits */}
 <motion.div
   variants={heroItem}
-  className="md:col-span-7 flex justify-center md:justify-end mt-10 md:mt-0 pr-8"
+  className="md:col-span-7 flex justify-center md:justify-end mt-10 md:mt-0"
+
 >
-  <div className="relative w-[680px] h-[620px] overflow-visible flex items-start justify-center pt-4">
+  <div className="relative w-[680px] h-[620px] overflow-visible flex items-start justify-center pt-4 translate-x-16">
     {/* Glow */}
     <span
       aria-hidden
@@ -100,7 +101,7 @@ export default function Hero() {
     <motion.div
       animate={reduce ? undefined : { y: [0, -8, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute top-8 left-6"
+      className="absolute top-[50px] left-[90px]"
     >
       <span
         className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
@@ -127,7 +128,7 @@ export default function Hero() {
     <motion.div
       animate={reduce ? undefined : { y: [0, 8, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute left-[-14px] top-[225px]"
+      className="absolute left-[70px] top-[250px]"
     >
       <span
         className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
@@ -148,7 +149,7 @@ export default function Hero() {
     <motion.div
       animate={reduce ? undefined : { y: [0, -8, 0] }}
       transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute bottom-10 -left-10"
+      className="absolute bottom-[95px] left-[40px]"
     >
       <span
         className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
@@ -169,7 +170,7 @@ export default function Hero() {
     <motion.div
       animate={reduce ? undefined : { y: [0, 8, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute top-8 -right-10 text-right"
+      className="absolute top-[55px] right-[80px] text-right"
     >
       <span
         className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
@@ -196,7 +197,7 @@ export default function Hero() {
     <motion.div
       animate={reduce ? undefined : { y: [0, -6, 0] }}
       transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute right-[-14px] top-[240px] text-right"
+      className="absolute right-[55px] top-[250px] text-right"
     >
       <span
         className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
@@ -223,7 +224,7 @@ export default function Hero() {
     <motion.div
       animate={reduce ? undefined : { y: [0, 8, 0] }}
       transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute bottom-0 right-6 text-right"
+      className="absolute bottom-[85px] right-[70px] text-right"
     >
       <span
         className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
@@ -247,7 +248,7 @@ export default function Hero() {
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      className="relative z-10 w-[360px] md:w-[380px] object-contain -mt-20"
+      className="relative z-10 w-[360px] md:w-[380px] object-contain -mt-16"
     />
 
     {/* Rings */}
