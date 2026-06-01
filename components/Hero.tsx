@@ -88,7 +88,7 @@ export default function Hero() {
               variants={heroItem}
               className="md:col-span-7 flex justify-end -mt-8"
             >
-              <div className="relative w-[520px] h-[560px] flex items-start justify-center pt-8">
+              <div className="relative w-[520px] h-[560px] flex items-start justify-center">
                 {/* Glow */}
                 <span
                   aria-hidden
@@ -277,7 +277,7 @@ export default function Hero() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="relative z-10 w-[320px] object-contain"
+                  className="relative z-10 w-[320px] object-contain -mt-10"
                 />
 
                 {/* Rings */}
