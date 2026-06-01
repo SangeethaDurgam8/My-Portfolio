@@ -8,6 +8,7 @@ const caveat = Caveat({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
 });
+
 export default function Hero() {
   const reduce = useReducedMotion();
 
@@ -20,11 +21,7 @@ export default function Hero() {
       <motion.div
         aria-hidden
         animate={reduce ? undefined : { y: [0, -18, 0] }}
-        transition={{
-          duration: 9,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-10 right-[-120px] h-[420px] w-[420px] rounded-full bg-blob blur-3xl opacity-40 pointer-events-none"
       />
 
@@ -48,13 +45,11 @@ export default function Hero() {
               >
                 I'm Sangeetha.
                 <br />
-                Curious about products, people,
-                and scalable systems.
+                Curious about products, people, and scalable systems.
                 <br />
                 <br />
-                Currently exploring product management,
-                strategy, and business-focused roles
-                through systems thinking, case studies,
+                Currently exploring product management, strategy, and
+                business-focused roles through systems thinking, case studies,
                 and problem-solving.
               </motion.p>
 
@@ -73,7 +68,6 @@ export default function Hero() {
                     />
                   </svg>
                 </ShineButton>
-
                 <a
                   href="#contact"
                   className="text-[14px] text-muted hover:text-ink transition"
@@ -83,182 +77,349 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* RIGHT — portrait + handwritten traits */}
-            {/* RIGHT — portrait + handwritten traits */}
-<motion.div
-  variants={heroItem}
-  className="md:col-span-7 flex justify-center md:justify-end mt-10 md:mt-0"
+            {/* RIGHT — portrait + handwritten traits
+             *
+             * Layout strategy:
+             * - Container: 640px wide × 680px tall, position:relative
+             * - Portrait: 260px wide, centered horizontally, anchored to
+             *   top:80px so the full head is always visible
+             * - Portrait occupies roughly x:190–450, y:80–680
+             * - Left labels go in x:0–160 band (clear of portrait)
+             * - Right labels go in x:460–640 band (clear of portrait)
+             * - All labels z-index:20 so they're always on top
+             */}
+            <motion.div
+              variants={heroItem}
+              className="md:col-span-7 flex justify-center md:justify-end mt-10 md:mt-0"
+            >
+              <div
+                className="relative"
+                style={{ width: "640px", height: "680px" }}
+              >
+                {/* Subtle glow */}
+                <span
+                  aria-hidden
+                  className="absolute inset-0 rounded-full bg-[var(--accent-50)] blur-3xl opacity-30 pointer-events-none"
+                />
 
->
-<div className="relative w-[680px] h-[620px] overflow-visible flex items-start justify-center pt-4 translate-x-16 -translate-y-12">    {/* Glow */}
-    <span
-      aria-hidden
-      className="absolute inset-0 bg-[var(--accent-50)] blur-3xl opacity-50 pointer-events-none"
-    />
+                {/* ── PORTRAIT ──
+                 * 260px wide, centered at x=190–450 of the 640px container.
+                 * top:80px ensures full head visible, bottom aligns naturally.
+                 */}
+                <motion.img
+                  src="/sketch-portrait.png"
+                  alt="Sangeetha"
+                  animate={reduce ? undefined : { y: [0, -10, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    top: "60px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "260px",
+                    objectFit: "contain",
+                    zIndex: 10,
+                  }}
+                />
 
-    {/* Top-left label */}
-    <motion.div
-      animate={reduce ? undefined : { y: [0, -8, 0] }}
-      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute top-[50px] left-[90px]"
-    >
-      <span
-        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
-      >
-        Detail-oriented
-      </span>
-      <svg
-        width="120"
-        height="90"
-        viewBox="0 0 120 90"
-        fill="none"
-        className="ml-16"
-      >
-        <path
-          d="M4 4C42 12 62 28 67 58C70 73 82 79 112 84"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    </motion.div>
+                {/* ── SPARKLES ── */}
+                <span
+                  aria-hidden
+                  style={{
+                    position: "absolute",
+                    top: "30px",
+                    right: "80px",
+                    fontSize: "20px",
+                    zIndex: 20,
+                  }}
+                >
+                  ✦
+                </span>
+                <span
+                  aria-hidden
+                  style={{
+                    position: "absolute",
+                    bottom: "100px",
+                    left: "170px",
+                    fontSize: "16px",
+                    zIndex: 20,
+                  }}
+                >
+                  ✦
+                </span>
+                <span
+                  aria-hidden
+                  style={{
+                    position: "absolute",
+                    bottom: "80px",
+                    left: "210px",
+                    fontSize: "11px",
+                    zIndex: 20,
+                  }}
+                >
+                  ✧
+                </span>
 
-    {/* Left label */}
-    <motion.div
-      animate={reduce ? undefined : { y: [0, 8, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute left-[70px] top-[250px]"
-    >
-      <span
-        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
-      >
-        Analytical
-      </span>
-      <svg width="130" height="45" viewBox="0 0 130 45" fill="none">
-        <path
-          d="M2 22C34 22 62 20 126 22"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    </motion.div>
+                {/* ── TOP-LEFT: Detail-oriented ──
+                 * Text starts at left:0, sits above the portrait shoulder area.
+                 * Arrow curves right toward center of portrait.
+                 */}
+                <motion.div
+                  animate={reduce ? undefined : { y: [0, -8, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    top: "60px",
+                    left: "0px",
+                    zIndex: 20,
+                  }}
+                >
+                  <span
+                    className={caveat.className}
+                    style={{
+                      display: "block",
+                      fontSize: "28px",
+                      color: "currentColor",
+                      transform: "rotate(-6deg)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Detail-oriented
+                  </span>
+                  <svg
+                    width="100"
+                    height="55"
+                    viewBox="0 0 100 55"
+                    fill="none"
+                    style={{ marginLeft: "80px" }}
+                  >
+                    <path
+                      d="M4 4C30 12 60 28 94 50"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </motion.div>
 
-    {/* Bottom-left label */}
-    <motion.div
-      animate={reduce ? undefined : { y: [0, -8, 0] }}
-      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute bottom-[95px] left-[40px]"
-    >
-      <span
-        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
-      >
-        User Focused
-      </span>
-      <svg width="140" height="60" viewBox="0 0 140 60" fill="none">
-        <path
-          d="M2 2C12 12 34 24 60 54"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    </motion.div>
+                {/* ── MID-LEFT: Analytical ──
+                 * Sits at the portrait's shoulder/chest level.
+                 * Arrow goes right toward portrait edge.
+                 */}
+                <motion.div
+                  animate={reduce ? undefined : { y: [0, 8, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    top: "280px",
+                    left: "0px",
+                    zIndex: 20,
+                  }}
+                >
+                  <span
+                    className={caveat.className}
+                    style={{
+                      display: "block",
+                      fontSize: "28px",
+                      color: "currentColor",
+                      transform: "rotate(-5deg)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Analytical
+                  </span>
+                  <svg
+                    width="120"
+                    height="24"
+                    viewBox="0 0 120 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M4 12C40 12 78 12 116 12"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </motion.div>
 
-    {/* Top-right label */}
-    <motion.div
-      animate={reduce ? undefined : { y: [0, 8, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute top-[55px] right-[80px] text-right"
-    >
-      <span
-        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
-      >
-        Curious
-      </span>
-      <svg
-        width="120"
-        height="70"
-        viewBox="0 0 120 70"
-        fill="none"
-        className="ml-auto"
-      >
-        <path
-          d="M2 58C30 24 62 12 116 6"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    </motion.div>
+                {/* ── BOTTOM-LEFT: User Focused ──
+                 * Below the portrait's waist, left side.
+                 * Arrow curves up-right toward portrait.
+                 */}
+                <motion.div
+                  animate={reduce ? undefined : { y: [0, -8, 0] }}
+                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    bottom: "130px",
+                    left: "0px",
+                    zIndex: 20,
+                  }}
+                >
+                  <span
+                    className={caveat.className}
+                    style={{
+                      display: "block",
+                      fontSize: "28px",
+                      color: "currentColor",
+                      transform: "rotate(-5deg)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    User Focused
+                  </span>
+                  <svg
+                    width="110"
+                    height="50"
+                    viewBox="0 0 110 50"
+                    fill="none"
+                  >
+                    <path
+                      d="M4 46C26 32 56 18 104 6"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </motion.div>
 
-    {/* Right label */}
-    <motion.div
-      animate={reduce ? undefined : { y: [0, -6, 0] }}
-      transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute right-[55px] top-[250px] text-right"
-    >
-      <span
-        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
-      >
-        Adaptable
-      </span>
-      <svg
-        width="120"
-        height="60"
-        viewBox="0 0 120 60"
-        fill="none"
-        className="ml-auto"
-      >
-        <path
-          d="M2 12C30 12 56 22 114 52"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    </motion.div>
+                {/* ── TOP-RIGHT: Curious ──
+                 * Sits top-right, text-align right.
+                 * Arrow curves down-left toward portrait.
+                 */}
+                <motion.div
+                  animate={reduce ? undefined : { y: [0, 8, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    top: "60px",
+                    right: "0px",
+                    textAlign: "right",
+                    zIndex: 20,
+                  }}
+                >
+                  <span
+                    className={caveat.className}
+                    style={{
+                      display: "block",
+                      fontSize: "28px",
+                      color: "currentColor",
+                      transform: "rotate(-4deg)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Curious
+                  </span>
+                  <svg
+                    width="100"
+                    height="55"
+                    viewBox="0 0 100 55"
+                    fill="none"
+                    style={{ marginLeft: "auto" }}
+                  >
+                    <path
+                      d="M96 4C70 12 40 28 6 50"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </motion.div>
 
-    {/* Bottom-right label */}
-    <motion.div
-      animate={reduce ? undefined : { y: [0, 8, 0] }}
-      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute bottom-[85px] right-[70px] text-right"
-    >
-      <span
-        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
-      >
-        Dedicated
-      </span>
-    </motion.div>
+                {/* ── MID-RIGHT: Adaptable ──
+                 * Mirror of Analytical, right side.
+                 */}
+                <motion.div
+                  animate={reduce ? undefined : { y: [0, -6, 0] }}
+                  transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    top: "280px",
+                    right: "0px",
+                    textAlign: "right",
+                    zIndex: 20,
+                  }}
+                >
+                  <span
+                    className={caveat.className}
+                    style={{
+                      display: "block",
+                      fontSize: "28px",
+                      color: "currentColor",
+                      transform: "rotate(-4deg)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Adaptable
+                  </span>
+                  <svg
+                    width="120"
+                    height="24"
+                    viewBox="0 0 120 24"
+                    fill="none"
+                    style={{ marginLeft: "auto" }}
+                  >
+                    <path
+                      d="M116 12C80 12 42 12 4 12"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </motion.div>
 
-    {/* Sparkles */}
-    <div className="absolute top-6 right-24 text-xl">✦</div>
-    <div className="absolute bottom-12 left-28 text-lg">✦</div>
-    <div className="absolute bottom-8 left-36 text-sm">✧</div>
+                {/* ── BOTTOM-RIGHT: Dedicated ──
+                 * Mirror of User Focused, right side.
+                 */}
+                <motion.div
+                  animate={reduce ? undefined : { y: [0, 8, 0] }}
+                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    bottom: "130px",
+                    right: "0px",
+                    textAlign: "right",
+                    zIndex: 20,
+                  }}
+                >
+                  <span
+                    className={caveat.className}
+                    style={{
+                      display: "block",
+                      fontSize: "28px",
+                      color: "currentColor",
+                      transform: "rotate(-4deg)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Dedicated
+                  </span>
+                  <svg
+                    width="110"
+                    height="50"
+                    viewBox="0 0 110 50"
+                    fill="none"
+                    style={{ marginLeft: "auto" }}
+                  >
+                    <path
+                      d="M106 46C84 32 54 18 6 6"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </motion.div>
 
-    {/* Portrait */}
-    <motion.img
-      src="/sketch-portrait.png"
-      alt="Sangeetha"
-      animate={reduce ? undefined : { y: [0, -10, 0] }}
-      transition={{
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-      className="relative z-10 w-[360px] md:w-[380px] object-contain -mt-16"
-    />
-
-    {/* Rings */}
-    {!reduce && (
-      <>
-        <span className="absolute inset-0 rounded-[28px] border border-accent/30 [animation:pulse-ring_3.6s_ease-out_infinite]" />
-        <span className="absolute inset-0 rounded-[28px] border border-accent/20 [animation:pulse-ring_3.6s_ease-out_infinite_1.2s]" />
-      </>
-    )}
-  </div>
-</motion.div>
+                {/* Pulse rings */}
+                {!reduce && (
+                  <>
+                    <span className="absolute inset-0 rounded-[28px] border border-accent/30 [animation:pulse-ring_3.6s_ease-out_infinite]" />
+                    <span className="absolute inset-0 rounded-[28px] border border-accent/20 [animation:pulse-ring_3.6s_ease-out_infinite_1.2s]" />
+                  </>
+                )}
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
@@ -286,14 +447,8 @@ export default function Hero() {
 
       <style jsx>{`
         @keyframes pulse-ring {
-          0% {
-            transform: scale(1);
-            opacity: 0.5;
-          }
-          100% {
-            transform: scale(1.06);
-            opacity: 0;
-          }
+          0% { transform: scale(1); opacity: 0.5; }
+          100% { transform: scale(1.06); opacity: 0; }
         }
       `}</style>
     </section>
