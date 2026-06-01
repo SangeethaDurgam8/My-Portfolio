@@ -35,7 +35,7 @@ export default function Hero() {
             variants={heroItem}
             className="serif text-[20vw] sm:text-[15vw] md:text-[11vw] leading-[0.88] tracking-tightest font-normal"
           >
-            <span className="block">Hi.</span>
+            <span className="block">Hello.</span>
           </motion.h1>
 
           {/* Main Grid */}
