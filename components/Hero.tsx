@@ -106,7 +106,7 @@ export default function Hero() {
                   className="absolute top-2 left-0"
                 >
                   <span
-                    className="block text-[32px] md:text-[38px] text-ink -rotate-6"
+                
                     className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     Detail-oriented
@@ -138,7 +138,8 @@ export default function Hero() {
                   className="absolute left-0 top-[220px]"
                 >
                   <span
-                    className="block text-[32px] md:text-[38px] text-ink -rotate-6"
+                    
+      
                     className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     Analytical
@@ -164,7 +165,7 @@ export default function Hero() {
                   className="absolute bottom-12 left-0"
                 >
                   <span
-                    className="block text-[32px] md:text-[38px] text-ink -rotate-6"
+                    
                     className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     User Focused
