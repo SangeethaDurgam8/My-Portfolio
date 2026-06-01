@@ -191,7 +191,7 @@ export default function Hero() {
                   className="absolute top-10 right-0 text-right"
                 >
                   <span
-                    className="block text-[32px] md:text-[38px] text-ink rotate-6"
+                    
                     className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     Curious
@@ -223,7 +223,7 @@ export default function Hero() {
                   className="absolute right-0 top-[235px] text-right"
                 >
                   <span
-                    className="block text-[32px] md:text-[38px] text-ink rotate-6"
+                    
                     className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     Adaptable
@@ -255,7 +255,7 @@ export default function Hero() {
                   className="absolute bottom-2 right-12 text-right"
                 >
                   <span
-                    className="block text-[32px] md:text-[38px] text-ink rotate-4"
+                    
                     className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     Dedicated
@@ -269,7 +269,7 @@ export default function Hero() {
 
                 {/* Portrait */}
                 <motion.img
-                  src="/sketch-portrait.png?v=2"
+                  src="/sketch-portrait.png"
                   alt="Sangeetha"
                   animate={reduce ? undefined : { y: [0, -10, 0] }}
                   transition={{
