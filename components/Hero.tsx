@@ -264,7 +264,7 @@ export default function Hero() {
 
                 {/* Portrait */}
                 <motion.img
-                  src="/photo.jpg"
+                  src="/sketch-portrait.jpg"
                   alt="Sangeetha"
                   animate={reduce ? undefined : { y: [0, -10, 0] }}
                   transition={{
