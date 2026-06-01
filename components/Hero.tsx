@@ -1,9 +1,13 @@
 "use client";
-
+import { Caveat } from "next/font/google";
 import { motion, useReducedMotion } from "framer-motion";
 import { heroStagger, heroItem } from "@/lib/motion";
 import ShineButton from "./ui/ShineButton";
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
 export default function Hero() {
   const reduce = useReducedMotion();
 
@@ -84,7 +88,7 @@ export default function Hero() {
               variants={heroItem}
               className="md:col-span-7 flex justify-end -mt-8"
             >
-              <div className="relative w-[520px] h-[560px] flex items-center justify-center">
+              <div className="relative w-[520px] h-[560px] flex items-start justify-center pt-8">
                 {/* Glow */}
                 <span
                   aria-hidden
@@ -102,8 +106,8 @@ export default function Hero() {
                   className="absolute top-2 left-0"
                 >
                   <span
-                    className="block text-[38px] md:text-[42px] text-ink -rotate-6"
-                    style={{ fontFamily: "cursive" }}
+                    className="block text-[32px] md:text-[38px] text-ink -rotate-6"
+                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     Detail-oriented
                   </span>
@@ -117,7 +121,7 @@ export default function Hero() {
                     <path
                       d="M4 4C42 12 62 28 67 58C70 73 82 79 112 84"
                       stroke="currentColor"
-                      strokeWidth="1.4"
+                      strokeWidth="2"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -134,16 +138,16 @@ export default function Hero() {
                   className="absolute left-0 top-[220px]"
                 >
                   <span
-                    className="block text-[38px] md:text-[42px] text-ink -rotate-6"
-                    style={{ fontFamily: "cursive" }}
+                    className="block text-[32px] md:text-[38px] text-ink -rotate-6"
+                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
-                    Creative
+                    Analytical
                   </span>
                   <svg width="130" height="45" viewBox="0 0 130 45" fill="none">
                     <path
                       d="M2 22C34 22 62 20 126 22"
                       stroke="currentColor"
-                      strokeWidth="1.4"
+                      strokeWidth="2"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -160,8 +164,8 @@ export default function Hero() {
                   className="absolute bottom-12 left-0"
                 >
                   <span
-                    className="block text-[34px] md:text-[40px] text-ink -rotate-6"
-                    style={{ fontFamily: "cursive" }}
+                    className="block text-[32px] md:text-[38px] text-ink -rotate-6"
+                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     User Focused
                   </span>
@@ -169,7 +173,7 @@ export default function Hero() {
                     <path
                       d="M2 2C12 12 34 24 60 54"
                       stroke="currentColor"
-                      strokeWidth="1.4"
+                      strokeWidth="2"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -186,8 +190,8 @@ export default function Hero() {
                   className="absolute top-10 right-0 text-right"
                 >
                   <span
-                    className="block text-[38px] md:text-[42px] text-ink rotate-6"
-                    style={{ fontFamily: "cursive" }}
+                    className="block text-[32px] md:text-[38px] text-ink rotate-6"
+                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     Curious
                   </span>
@@ -201,7 +205,7 @@ export default function Hero() {
                     <path
                       d="M2 58C30 24 62 12 116 6"
                       stroke="currentColor"
-                      strokeWidth="1.4"
+                      strokeWidth="2"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -218,8 +222,8 @@ export default function Hero() {
                   className="absolute right-0 top-[235px] text-right"
                 >
                   <span
-                    className="block text-[38px] md:text-[42px] text-ink rotate-6"
-                    style={{ fontFamily: "cursive" }}
+                    className="block text-[32px] md:text-[38px] text-ink rotate-6"
+                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     Adaptable
                   </span>
@@ -233,7 +237,7 @@ export default function Hero() {
                     <path
                       d="M2 12C30 12 56 22 114 52"
                       stroke="currentColor"
-                      strokeWidth="1.4"
+                      strokeWidth="2"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -250,8 +254,8 @@ export default function Hero() {
                   className="absolute bottom-2 right-12 text-right"
                 >
                   <span
-                    className="block text-[38px] md:text-[42px] text-ink rotate-4"
-                    style={{ fontFamily: "cursive" }}
+                    className="block text-[32px] md:text-[38px] text-ink rotate-4"
+                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
                   >
                     Dedicated
                   </span>
@@ -272,7 +276,7 @@ export default function Hero() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="relative z-10 w-[320px] h-[400px] object-cover rounded-[28px] border border-line shadow-card"
+                  className="relative z-10 w-[320px] object-contain"
                 />
 
                 {/* Rings */}
