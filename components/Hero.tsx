@@ -87,7 +87,7 @@ export default function Hero() {
             {/* RIGHT — portrait + handwritten traits */}
 <motion.div
   variants={heroItem}
-  className="md:col-span-7 flex justify-center md:justify-end mt-10 md:mt-0"
+  className="md:col-span-7 flex justify-center md:justify-end mt-10 md:mt-0 pr-8"
 >
   <div className="relative w-[680px] h-[620px] overflow-visible flex items-start justify-center pt-4">
     {/* Glow */}
@@ -100,7 +100,7 @@ export default function Hero() {
     <motion.div
       animate={reduce ? undefined : { y: [0, -8, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute top-2 -left-14"
+      className="absolute top-8 left-6"
     >
       <span
         className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
