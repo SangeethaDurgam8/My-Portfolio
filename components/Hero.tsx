@@ -84,211 +84,181 @@ export default function Hero() {
             </div>
 
             {/* RIGHT — portrait + handwritten traits */}
-            <motion.div
-              variants={heroItem}
-              className="md:col-span-7 flex justify-end -mt-8"
-            >
-              <div className="relative w-[520px] h-[560px] flex items-start justify-center">
-                {/* Glow */}
-                <span
-                  aria-hidden
-                  className="absolute inset-0 bg-[var(--accent-50)] blur-3xl opacity-50"
-                />
+            {/* RIGHT — portrait + handwritten traits */}
+<motion.div
+  variants={heroItem}
+  className="md:col-span-7 flex justify-center md:justify-end mt-10 md:mt-0"
+>
+  <div className="relative w-[680px] h-[620px] overflow-visible flex items-start justify-center pt-4">
+    {/* Glow */}
+    <span
+      aria-hidden
+      className="absolute inset-0 bg-[var(--accent-50)] blur-3xl opacity-50 pointer-events-none"
+    />
 
-                {/* Top-left label */}
-                <motion.div
-                  animate={reduce ? undefined : { y: [0, -8, 0] }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-2 left-0"
-                >
-                  <span
-                
-                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
-                  >
-                    Detail-oriented
-                  </span>
-                  <svg
-                    width="120"
-                    height="90"
-                    viewBox="0 0 120 90"
-                    fill="none"
-                    className="ml-18"
-                  >
-                    <path
-                      d="M4 4C42 12 62 28 67 58C70 73 82 79 112 84"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </motion.div>
+    {/* Top-left label */}
+    <motion.div
+      animate={reduce ? undefined : { y: [0, -8, 0] }}
+      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      className="absolute top-2 -left-14"
+    >
+      <span
+        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
+      >
+        Detail-oriented
+      </span>
+      <svg
+        width="120"
+        height="90"
+        viewBox="0 0 120 90"
+        fill="none"
+        className="ml-16"
+      >
+        <path
+          d="M4 4C42 12 62 28 67 58C70 73 82 79 112 84"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    </motion.div>
 
-                {/* Left label */}
-                <motion.div
-                  animate={reduce ? undefined : { y: [0, 8, 0] }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute left-0 top-[220px]"
-                >
-                  <span
-                    
-      
-                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
-                  >
-                    Analytical
-                  </span>
-                  <svg width="130" height="45" viewBox="0 0 130 45" fill="none">
-                    <path
-                      d="M2 22C34 22 62 20 126 22"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </motion.div>
+    {/* Left label */}
+    <motion.div
+      animate={reduce ? undefined : { y: [0, 8, 0] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      className="absolute left-[-14px] top-[225px]"
+    >
+      <span
+        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
+      >
+        Analytical
+      </span>
+      <svg width="130" height="45" viewBox="0 0 130 45" fill="none">
+        <path
+          d="M2 22C34 22 62 20 126 22"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    </motion.div>
 
-                {/* Bottom-left label */}
-                <motion.div
-                  animate={reduce ? undefined : { y: [0, -8, 0] }}
-                  transition={{
-                    duration: 7,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute bottom-12 left-0"
-                >
-                  <span
-                    
-                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
-                  >
-                    User Focused
-                  </span>
-                  <svg width="140" height="60" viewBox="0 0 140 60" fill="none">
-                    <path
-                      d="M2 2C12 12 34 24 60 54"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </motion.div>
+    {/* Bottom-left label */}
+    <motion.div
+      animate={reduce ? undefined : { y: [0, -8, 0] }}
+      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+      className="absolute bottom-10 -left-10"
+    >
+      <span
+        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
+      >
+        User Focused
+      </span>
+      <svg width="140" height="60" viewBox="0 0 140 60" fill="none">
+        <path
+          d="M2 2C12 12 34 24 60 54"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    </motion.div>
 
-                {/* Top-right label */}
-                <motion.div
-                  animate={reduce ? undefined : { y: [0, 8, 0] }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-10 right-0 text-right"
-                >
-                  <span
-                    
-                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
-                  >
-                    Curious
-                  </span>
-                  <svg
-                    width="120"
-                    height="70"
-                    viewBox="0 0 120 70"
-                    fill="none"
-                    className="ml-auto"
-                  >
-                    <path
-                      d="M2 58C30 24 62 12 116 6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </motion.div>
+    {/* Top-right label */}
+    <motion.div
+      animate={reduce ? undefined : { y: [0, 8, 0] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      className="absolute top-8 -right-10 text-right"
+    >
+      <span
+        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
+      >
+        Curious
+      </span>
+      <svg
+        width="120"
+        height="70"
+        viewBox="0 0 120 70"
+        fill="none"
+        className="ml-auto"
+      >
+        <path
+          d="M2 58C30 24 62 12 116 6"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    </motion.div>
 
-                {/* Right label */}
-                <motion.div
-                  animate={reduce ? undefined : { y: [0, -6, 0] }}
-                  transition={{
-                    duration: 5.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute right-0 top-[235px] text-right"
-                >
-                  <span
-                    
-                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
-                  >
-                    Adaptable
-                  </span>
-                  <svg
-                    width="120"
-                    height="60"
-                    viewBox="0 0 120 60"
-                    fill="none"
-                    className="ml-auto"
-                  >
-                    <path
-                      d="M2 12C30 12 56 22 114 52"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </motion.div>
+    {/* Right label */}
+    <motion.div
+      animate={reduce ? undefined : { y: [0, -6, 0] }}
+      transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+      className="absolute right-[-14px] top-[240px] text-right"
+    >
+      <span
+        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
+      >
+        Adaptable
+      </span>
+      <svg
+        width="120"
+        height="60"
+        viewBox="0 0 120 60"
+        fill="none"
+        className="ml-auto"
+      >
+        <path
+          d="M2 12C30 12 56 22 114 52"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    </motion.div>
 
-                {/* Bottom-right label */}
-                <motion.div
-                  animate={reduce ? undefined : { y: [0, 8, 0] }}
-                  transition={{
-                    duration: 7,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute bottom-2 right-12 text-right"
-                >
-                  <span
-                    
-                    className={`${caveat.className} block text-[32px] md:text-[38px] text-ink -rotate-6`}
-                  >
-                    Dedicated
-                  </span>
-                </motion.div>
+    {/* Bottom-right label */}
+    <motion.div
+      animate={reduce ? undefined : { y: [0, 8, 0] }}
+      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+      className="absolute bottom-0 right-6 text-right"
+    >
+      <span
+        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
+      >
+        Dedicated
+      </span>
+    </motion.div>
 
-                {/* Sparkles */}
-                <div className="absolute top-6 right-24 text-xl">✦</div>
-                <div className="absolute bottom-12 left-28 text-lg">✦</div>
-                <div className="absolute bottom-8 left-36 text-sm">✧</div>
+    {/* Sparkles */}
+    <div className="absolute top-6 right-24 text-xl">✦</div>
+    <div className="absolute bottom-12 left-28 text-lg">✦</div>
+    <div className="absolute bottom-8 left-36 text-sm">✧</div>
 
-                {/* Portrait */}
-                <motion.img
-                  src="/sketch-portrait.png"
-                  alt="Sangeetha"
-                  animate={reduce ? undefined : { y: [0, -10, 0] }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="relative z-10 w-[380px] object-contain -mt-40"
-                />
+    {/* Portrait */}
+    <motion.img
+      src="/sketch-portrait.png"
+      alt="Sangeetha"
+      animate={reduce ? undefined : { y: [0, -10, 0] }}
+      transition={{
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="relative z-10 w-[360px] md:w-[380px] object-contain -mt-20"
+    />
 
-                {/* Rings */}
-                {!reduce && (
-                  <>
-                    <span className="absolute inset-0 rounded-[28px] border border-accent/30 [animation:pulse-ring_3.6s_ease-out_infinite]" />
-                    <span className="absolute inset-0 rounded-[28px] border border-accent/20 [animation:pulse-ring_3.6s_ease-out_infinite_1.2s]" />
-                  </>
-                )}
-              </div>
-            </motion.div>
+    {/* Rings */}
+    {!reduce && (
+      <>
+        <span className="absolute inset-0 rounded-[28px] border border-accent/30 [animation:pulse-ring_3.6s_ease-out_infinite]" />
+        <span className="absolute inset-0 rounded-[28px] border border-accent/20 [animation:pulse-ring_3.6s_ease-out_infinite_1.2s]" />
+      </>
+    )}
+  </div>
+</motion.div>
           </div>
         </motion.div>
       </div>
