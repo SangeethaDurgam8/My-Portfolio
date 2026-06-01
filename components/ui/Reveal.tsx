@@ -1,30 +1,28 @@
-// components/ui/Reveal.tsx
 "use client";
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { EASE } from "@/lib/motion";
 
 export default function Reveal({
   children,
+  className,
   delay = 0,
-  y = 24,
-  className = "",
 }: {
-  children: ReactNode;
-  delay?: number;
-  y?: number;
+  children: React.ReactNode;
   className?: string;
+  delay?: number;
 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-12% 0px" });
+  const reduce = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{
-        duration: 0.8,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+      ref={ref}
       className={className}
+      initial={reduce ? false : { opacity: 0, y: 18 }}
+      animate={inView ? { opacity: 1, y: 0 } : undefined}
+      transition={{ duration: 0.7, ease: EASE, delay }}
     >
       {children}
     </motion.div>

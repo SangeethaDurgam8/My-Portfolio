@@ -3,6 +3,7 @@
 "use client";
 
 import Reveal from "./ui/Reveal";
+import TiltCard from "./ui/TiltCard";
 
 const projects = [
   {
@@ -134,8 +135,18 @@ export default function FeaturedProjects() {
 
           {projects.map((project, i) => (
             <Reveal key={project.id} delay={i * 0.05}>
-
-              <div className="grid md:grid-cols-12 gap-10 border-t border-line pt-12">
+  <TiltCard>
+    <div
+      className="group relative grid md:grid-cols-12 gap-10 border-t border-line pt-12
+                 rounded-2xl px-4 -mx-4 transition-colors duration-500
+                 hover:bg-surface/40"
+    >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0
+                   group-hover:opacity-100 transition-opacity duration-500
+                   shadow-[0_30px_80px_-30px_var(--accent-glow)]"
+      />
 
                 {/* LEFT */}
                 <div className="md:col-span-5">
@@ -169,13 +180,23 @@ export default function FeaturedProjects() {
                     <div className="mt-8 flex flex-wrap gap-3">
 
                       {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-line px-4 py-2 text-[11px] uppercase tracking-[0.14em] text-muted hover:border-ink/30 transition"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+  <span
+    key={tag}
+    className="group/chip relative overflow-hidden rounded-full border border-line px-4 py-2
+               text-[11px] uppercase tracking-[0.14em] text-muted
+               hover:text-ink hover:border-accent/40 transition-colors duration-300"
+  >
+    <span className="relative z-10">{tag}</span>
+
+    <span
+      aria-hidden
+      className="absolute inset-0 -z-0 origin-left scale-x-0
+                 bg-[var(--accent-50)]
+                 transition-transform duration-300 ease-out
+                 group-hover/chip:scale-x-100"
+    />
+  </span>
+))}
 
                     </div>
 
@@ -186,7 +207,7 @@ export default function FeaturedProjects() {
 
                     <a
                       href={project.link}
-                      className="group inline-flex items-center gap-2 text-[15px] text-ink hover:text-muted transition"
+                      className="group inline-flex items-center gap-2 text-[15px] text-ink hover:text-accent transition"
                     >
                       {project.linkText}
 
@@ -199,9 +220,16 @@ export default function FeaturedProjects() {
 
                 </div>
 
-              </div>
+                            <span
+                aria-hidden
+                className="absolute -bottom-px left-4 right-4 h-px overflow-hidden"
+              >
+                <span className="block h-full w-0 bg-accent group-hover:w-full transition-[width] duration-700 ease-out" />
+              </span>
 
-            </Reveal>
+            </div>
+          </TiltCard>
+        </Reveal>
           ))}
 
         </div>
