@@ -239,16 +239,25 @@ export default function Hero() {
 
     {/* Portrait */}
     <motion.img
-      src="sketch-portrait.png"
-      alt="Sangeetha"
-      animate={reduce ? undefined : { y: [0, -10, 0] }}
-      transition={{
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-      className="relative z-10 w-[420px] md:w-[460px] object-contain"
-    />
+  src="sketch-portrait.png"
+  alt="Sangeetha"
+  animate={reduce ? undefined : { y: [0, -10, 0] }}
+  transition={{
+    duration: 6,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  className="
+    absolute
+    top-[20px]
+    left-1/2
+    -translate-x-1/2
+    z-10
+    w-[420px]
+    md:w-[460px]
+    object-contain
+  "
+/>
 
     {/* Rings */}
     {!reduce && (
