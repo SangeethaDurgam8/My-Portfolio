@@ -90,7 +90,7 @@ export default function Hero() {
   className="md:col-span-7 flex justify-center md:justify-end mt-10 md:mt-0"
 
 >
-<div className="relative w-[680px] h-[620px] overflow-visible flex items-start justify-center pt-4 translate-x-16 -translate-y-12">    {/* Glow */}
+<div className="relative w-[620px] h-[540px] overflow-visible flex items-center justify-center -translate-x-10 -translate-y-8">    {/* Glow */}
     <span
       aria-hidden
       className="absolute inset-0 bg-[var(--accent-50)] blur-3xl opacity-50 pointer-events-none"
@@ -247,7 +247,7 @@ export default function Hero() {
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      className="relative z-10 w-[360px] md:w-[380px] object-contain -mt-16"
+      className="relative z-10 w-[420px] md:w-[460px] object-contain"
     />
 
     {/* Rings */}
