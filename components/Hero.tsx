@@ -127,64 +127,102 @@ export default function Hero() {
     <motion.div
       animate={reduce ? undefined : { y: [0, 8, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute left-[70px] top-[250px]"
+      className="absolute left-[120px] top-[250px]"
     >
       <span
-        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
-      >
-        Analytical
-      </span>
-      <svg width="130" height="45" viewBox="0 0 130 45" fill="none">
+  style={{
+    transform: "translate(540px, 120px) rotate(-6deg)",
+  }}
+  className={`${caveat.className} block text-[30px] md:text-[36px] text-ink`}
+>
+  Curious
+</span>
+
+<svg
+  style={{
+    transform: "translate(480px, -1fouc0px)",
+  }}
+  width="160"
+  height="90"
+  viewBox="0 0 160 90"
+  fill="none"
+>
         <path
-          d="M2 22C34 22 62 20 126 22"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+  d="M4 4C42 12 62 28 67 58C70 73 82 79 102 84"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+/>
       </svg>
     </motion.div>
 
     {/* Bottom-left label */}
-    <motion.div
-      animate={reduce ? undefined : { y: [0, -8, 0] }}
-      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute bottom-[95px] left-[40px]"
-    >
-      <span
-        className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
-      >
-        User Focused
-      </span>
-      <svg width="140" height="60" viewBox="0 0 140 60" fill="none">
-        <path
-          d="M2 2C12 12 34 24 60 54"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    </motion.div>
+    {/* Bottom-left label */}
+<motion.div
+  animate={reduce ? undefined : { y: [0, -8, 0] }}
+  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+  className="absolute bottom-[95px] left-[100px]"
+>
+  <span
+    style={{
+    transform: "translate(0px, 80px) rotate(-6deg)",
+  }}
+    className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
+  >
+    User Focused
+  </span>
 
+  <svg
+    style={{
+      transform: "translate(80px, -30px)",
+    }}
+    width="140"
+    height="60"
+    viewBox="0 0 140 60"
+    fill="none"
+  >
+    <path
+      d="M116 4C78 12 58 28 53 58C50 73 38 79 18 84"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+</motion.div>
+{/* Sparkles */}
+<div className="absolute top-6 right-24 text-xl">✦</div>
+<div className="absolute bottom-12 left-28 text-lg">✧</div>
+<div className="absolute bottom-8 left-406 text-sm">✦</div>
+
+{/* New top-right sparkles */}
+<div className="absolute top-10 right-50 text-lg">✧</div>
+<div className="absolute top-80 right 50 text-sm">✦</div>
+<div className="absolute top-160 right-5 text-xl">✦</div>
+<div className="absolute top-10 right-[40px] text-sm">✧</div>
+<div className="absolute top-28 right-480 text-lg">✦</div>
     {/* Top-right label */}
     <motion.div
       animate={reduce ? undefined : { y: [0, 8, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute top-[55px] right-[80px] text-right"
+      className="absolute top-[55px] right-[-80px] text-right"
     >
       <span
+      style={{
+    transform: "translate(30px, 0px) rotate(-6deg)",
+  }}
         className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
       >
-        Curious
+        Analytical
       </span>
       <svg
         width="120"
         height="70"
         viewBox="0 0 120 70"
         fill="none"
-        className="ml-auto"
+        className="-mt-2"
       >
         <path
-          d="M2 58C30 24 62 12 116 6"
+          d="M116 4C78 12 58 28 53 58C50 73 38 79 18 84"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
@@ -223,7 +261,7 @@ export default function Hero() {
     <motion.div
       animate={reduce ? undefined : { y: [0, 8, 0] }}
       transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute bottom-[85px] right-[70px] text-right"
+      className="absolute bottom-[85px] right-[90px] text-right"
     >
       <span
         className={`${caveat.className} block text-[30px] md:text-[36px] text-ink -rotate-6`}
@@ -231,11 +269,24 @@ export default function Hero() {
         Dedicated
       </span>
     </motion.div>
-
+<svg
+  width="160"
+  height="90"
+  viewBox="0 0 160 90"
+  fill="none"
+  className="ml-auto"
+>
+  <path
+    d="M150 10C120 20 90 35 65 55C45 70 30 78 8 84"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+  />
+</svg>
     {/* Sparkles */}
-    <div className="absolute top-6 right-24 text-xl">✦</div>
-    <div className="absolute bottom-12 left-28 text-lg">✦</div>
-    <div className="absolute bottom-8 left-36 text-sm">✧</div>
+    <div className="absolute top-56 right-12 text-xl">✦</div>
+    <div className="absolute bottom-12 right-[80px] text-lg">✧</div>
+    <div className="absolute top-[300px] right-[140px] text-sm">✦</div>
 
     {/* Portrait */}
     <motion.img
@@ -249,8 +300,8 @@ export default function Hero() {
   }}
   className="
     absolute
-    top-[20px]
-    left-1/2
+    top-[-220px]
+    left-[35%]
     -translate-x-1/2
     z-10
     w-[420px]
