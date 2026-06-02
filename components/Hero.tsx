@@ -140,7 +140,7 @@ export default function Hero() {
 
 <svg
   style={{
-    transform: "translate(480px, -1fouc0px)",
+    transform: "translate(480px, 0px)",
   }}
   width="160"
   height="90"
@@ -191,8 +191,8 @@ export default function Hero() {
 </motion.div>
 {/* Sparkles */}
 <div className="absolute top-6 right-24 text-xl">✦</div>
-<div className="absolute bottom-12 left-28 text-lg">✧</div>
-<div className="absolute bottom-8 left-406 text-sm">✦</div>
+<div className="absolute top-[390px] right-[30px] text-lg">✧</div>
+<div className="absolute top-[470px] right-[80px] text-sm">✦</div>
 
 {/* New top-right sparkles */}
 <div className="absolute top-10 right-50 text-lg">✧</div>
@@ -285,7 +285,7 @@ export default function Hero() {
 </svg>
     {/* Sparkles */}
     <div className="absolute top-56 right-12 text-xl">✦</div>
-    <div className="absolute bottom-12 right-[80px] text-lg">✧</div>
+    {/* <div className="absolute bottom-12 right-[80px] text-lg">✧</div> */}
     <div className="absolute top-[300px] right-[140px] text-sm">✦</div>
 
     {/* Portrait */}
