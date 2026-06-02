@@ -289,34 +289,35 @@ export default function Hero() {
     <div className="absolute top-[300px] right-[140px] text-sm">✦</div>
 
     {/* Portrait */}
-    <motion.img
-  src="sketch-portrait.png"
-  alt="Sangeetha"
-  animate={reduce ? undefined : { y: [0, -10, 0] }}
-  transition={{
-    duration: 6,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
-  className="
-    absolute
-    top-[-220px]
-    left-[35%]
-    -translate-x-1/2
-    z-10
-    w-[420px]
-    md:w-[460px]
-    object-contain
-  "
-/>
-
+        {/* Portrait + rings wrapper — positioned exactly where the image was */}
+    <div className="absolute top-[-220px] left-[35%] -translate-x-1/2 z-10 w-[420px] md:w-[460px]">
+      <motion.img
+        src="sketch-portrait.png"
+        alt="Sangeetha"
+        animate={reduce ? undefined : { y: [0, -10, 0] }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="w-full h-auto object-contain"
+      />
+      {/* Rings now sit exactly over the image */}
+      {!reduce && (
+        <>
+          <span className="absolute inset-0 rounded-[28px] border border-accent/30 [animation:pulse-ring_3.6s_ease-out_infinite]" />
+          <span className="absolute inset-0 rounded-[28px] border border-accent/20 [animation:pulse-ring_3.6s_ease-out_infinite_1.2s]" />
+        </>
+      )}
+    </div>
+{/* 
     {/* Rings */}
     {!reduce && (
       <>
         <span className="absolute inset-0 rounded-[28px] border border-accent/30 [animation:pulse-ring_3.6s_ease-out_infinite]" />
         <span className="absolute inset-0 rounded-[28px] border border-accent/20 [animation:pulse-ring_3.6s_ease-out_infinite_1.2s]" />
       </>
-    )}
+    )} */}
   </div>
 </motion.div>
           </div>
