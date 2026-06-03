@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import Grain from "@/components/ui/Grain";
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -49,7 +50,8 @@ export default function RootLayout({
           <ScrollProgress />
           <CustomCursor />
           <Grain />
-          {children}
+          {children} 
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
